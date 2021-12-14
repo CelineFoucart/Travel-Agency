@@ -14,10 +14,10 @@ h1, h2, h3, h4 {
 }
 h1 {
     font-family: 'Crete Round', serif;
-    font-size: 45px;
+    font-size: 35px;
 }
 h2 {
-    font-size: 55px;
+    font-size: 45px;
 }
 
 h3 {
@@ -36,12 +36,6 @@ p {
     color: #ff7a00;
 }
 
-.wrapper {
-    width: 940px;
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
 ul {
     list-style: none;
 }
@@ -56,36 +50,37 @@ small {
     font-style: italic;
 }
 
-.clear {
-    clear: both;
-}
-
 /* HEADER */
-header {
-    height: 120px;
+.header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    min-height: 120px;
+    max-width: 940px;
+    margin: 0 auto;
+    padding-bottom: 20px;
 }
 
-header h1 {
-    float: left;
-    margin-top: 32px;
+.header nav ul {
+    padding-top: 10px;
+    text-align: center;
 }
 
-header nav {
-    float: right;
-    margin-top: 50px;
+.header nav ul li {
+    display: inline-block;
+    padding-right: 10px;
+    line-height: 1.6;
 }
 
-header nav ul li {
-    float: left;
-}
-
-header nav ul li a {
+.header nav ul li a {
     text-transform: uppercase;
     font-weight: bold;
-    margin-right: 20px;
+    transition: color 0.3s ease-in-out;
 }
 
-header nav ul li a:hover {
+.header nav ul li a:hover {
     color: #ff7a00;
 }
 
@@ -93,14 +88,15 @@ header nav ul li a:hover {
 #main-image {
     height: 580px;
     background: url('images/main.jpg') center;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.centered-block {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 #main-image h2 {
@@ -122,6 +118,7 @@ header nav ul li a:hover {
     line-height: 50px;
     text-align: center;
     border-radius: 3px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .button-1:hover {
@@ -131,11 +128,14 @@ header nav ul li a:hover {
 /* STEPS */
 #steps ul {
     margin: 80px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #steps ul li {
     width: 300px;
-    float: left;
     padding-top: 140px;
     text-align: center;
     margin-right: 10px;
@@ -167,17 +167,17 @@ header nav ul li a:hover {
     background-color: #efefef;
     padding: 60px 0;
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 #possibilities article {
-    width: 460px;
+    width: 310px;
     height: 270px;
-    float: left;
     border-radius: 10px;
-}
-
-#possibilities article:first-child {
-    margin-right: 20px;
 }
 
 #article-1 {
@@ -191,7 +191,7 @@ header nav ul li a:hover {
 .overlay {
     background: rgba(255, 255, 255, 0.95);
     height: 100%;
-    width: 200px;
+    max-width: 200px;
     padding: 20px;
     border-radius: 10px 0 0 10px;
     text-align: center;
@@ -216,22 +216,23 @@ header nav ul li a:hover {
     background-color: #ff7a00;
     padding: 6px 20px;
     border-radius: 3px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .button-2:hover {
-    background: #02b8dd;
+    background-color: #02b8dd;
 }
 
 /* CONTACT */
 #contact {
-    padding: 60px 0;
+    padding: 60px 10px;
     text-align: center;
 }
 
 #contact h3 {
     text-transform: uppercase;
     margin: 0 auto 20px;
-    width: 400px;
+    max-width: 400px;
     border-bottom: 1px solid #02b8dd;
     padding-bottom: 20px;
 }
@@ -240,10 +241,13 @@ header nav ul li a:hover {
     margin: 60px 0 20px 0;
 }
 
+#contact .form-block {
+    padding-bottom: 15px;
+}
+
 #contact label {
     font-weight: bold;
     font-size: 20px;
-    margin-right: 10px;
     color: #777777;
 }
 
@@ -253,6 +257,12 @@ header nav ul li a:hover {
     margin-right: 20px;
     border: 2px solid #ddd;
     border-radius: 3px;
+    transition: all 0.4s ease-in-out;
+}
+
+#contact input[type="text"]:focus {
+    outline: none;
+    border-color: #02b8dd;
 }
 
 #contact p {
@@ -267,6 +277,7 @@ header nav ul li a:hover {
     border-style: none;
     border-radius: 3px;
     padding: 11px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .button-3:hover {
@@ -298,4 +309,58 @@ footer h1 {
 
 .copyright a:hover {
     text-decoration: underline;
+}
+
+@media (min-width: 375px) {
+    #contact label {
+        display: inline-block;
+        width: 70px;
+    }
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-family: 'Crete Round', serif;
+        font-size: 45px;
+    }
+    h2 {
+        font-size: 55px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    .header nav ul li {
+        padding-right: 20px;
+    }
+
+    .header {
+        flex-direction: row;
+        padding-bottom: 0;
+    }
+
+    #possibilities article {
+        width: 460px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    #steps ul {
+        flex-direction: row;
+    }
+
+    #possibilities {
+        flex-direction: row;
+    }
+
+    #contact .form-block {
+        padding-bottom: 0;
+        display: inline-block;
+    }
 }
